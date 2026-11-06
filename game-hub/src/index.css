@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; }
+  body { overflow-x: clip; }
+  body {
+    @apply bg-ink font-sans text-fg antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 85% -10%, rgba(124, 58, 237, 0.22), transparent 60%),
+      radial-gradient(50rem 36rem at -10% 110%, rgba(168, 85, 247, 0.14), transparent 60%),
+      linear-gradient(180deg, #06030f 0%, #0c0720 100%);
+    background-attachment: fixed;
+  }
+  :focus-visible { @apply outline-none ring-2 ring-neon/70 ring-offset-2 ring-offset-ink; }
+  ::selection { @apply bg-neon/40; }
+  html[data-motion='reduced'] *, html[data-motion='reduced'] *::before, html[data-motion='reduced'] *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important;
+  }
+  html[data-motion='off'] *, html[data-motion='off'] *::before, html[data-motion='off'] *::after {
+    animation: none !important; transition: none !important; scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .glass { @apply border border-white/10 bg-white/[0.045] backdrop-blur-xl; }
+  .pill { @apply rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-muted; }
+}

@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "lib": ["ES2023", "DOM"], "module": "ESNext", "moduleResolution": "bundler",
+    "strict": true, "noEmit": true, "skipLibCheck": true, "types": ["node"]
+  },
+  "include": ["./**/*.ts", "../src/online/**/*.ts", "../src/games/tic-tac-toe/logic.ts", "../src/progress/logic.ts"],
+  "exclude": ["../src/online/index.ts", "../src/online/useOnline.ts"]
+}
